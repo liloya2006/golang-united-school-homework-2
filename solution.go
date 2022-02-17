@@ -13,16 +13,17 @@ import "math"
 type myBeautifulType int
 
 func CalcSquare(sideLen float64, sidesNum myBeautifulType) float64 {
+	const SidesCircle myBeautifulType = 0
+	const SidesTriangle myBeautifulType = 3
+	const SidesSquare myBeautifulType = 4
+
 	switch sidesNum {
-	case 0:
-		SidesCircle := (2 * math.Pi * sideLen)
-		return SidesCircle
-	case 3:
-		SidesTriangle := (math.Pow(sideLen, 2) * math.Sqrt(3)) / 4
-		return SidesTriangle
-	case 4:
-		SidesSquare := math.Pow(sideLen, 2)
-		return SidesSquare
+	case SidesCircle:
+		return 2 * math.Pi * sideLen
+	case SidesTriangle:
+		return (math.Pow(sideLen, 2) * math.Sqrt(3)) / 4
+	case SidesSquare:
+		return math.Pow(sideLen, 2)
 	default:
 		return 0
 	}
