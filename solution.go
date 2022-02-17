@@ -12,33 +12,34 @@ import "math"
 
 type myBeautifulType int
 
+const SidesCircle myBeautifulType = 0
+const SidesTriangle myBeautifulType = 3
+const SidesSquare myBeautifulType = 4
+
 func CalcSquare(sideLen float64, sidesNum myBeautifulType) float64 {
-	const SidesCircle myBeautifulType = 0
-	const SidesTriangle myBeautifulType = 3
-	const SidesSquare myBeautifulType = 4
 
-	if sidesNum == SidesCircle {
-		return 2 * math.Pi * sideLen
-	} else {
-		if sidesNum == SidesTriangle {
-			return (math.Pow(sideLen, 2) * math.Sqrt(3)) / 4
-		} else {
-			if sidesNum == SidesSquare {
-				return math.Pow(sideLen, 2)
-			} else {
-				return 0
-			}
-		}
-	}
-
-	//switch sidesNum {
-	//case SidesCircle:
+	//if sidesNum == SidesCircle {
 	//	return 2 * math.Pi * sideLen
-	//case SidesTriangle:
-	//	return (math.Pow(sideLen, 2) * math.Sqrt(3)) / 4
-	//case SidesSquare:
-	//	return math.Pow(sideLen, 2)
-	//default:
-	//	return 0
+	//} else {
+	//	if sidesNum == SidesTriangle {
+	//		return (math.Pow(sideLen, 2) * math.Sqrt(3)) / 4
+	//	} else {
+	//		if sidesNum == SidesSquare {
+	//			return math.Pow(sideLen, 2)
+	//		} else {
+	//			return 0
+	//		}
+	//	}
 	//}
+
+	switch sidesNum {
+	case SidesCircle:
+		return 2 * math.Pi * sideLen
+	case SidesTriangle:
+		return (math.Pow(sideLen, 2) * math.Sqrt(3)) / 4
+	case SidesSquare:
+		return math.Pow(sideLen, 2)
+	default:
+		return 0
+	}
 }
