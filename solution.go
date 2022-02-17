@@ -15,11 +15,14 @@ type myBeautifulType int
 func CalcSquare(sideLen float64, sidesNum myBeautifulType) float64 {
 	switch sidesNum {
 	case 0:
-		return 2 * math.Pi * sideLen
+		SidesCircle := (2 * math.Pi * sideLen)
+		return SidesCircle
 	case 3:
-		return (math.Pow(sideLen, 2) * math.Sqrt(3)) / 4
+		SidesTriangle := (math.Pow(sideLen, 2) * math.Sqrt(3)) / 4
+		return SidesTriangle
 	case 4:
-		return math.Pow(sideLen, 2)
+		SidesSquare := math.Pow(sideLen, 2)
+		return SidesSquare
 	default:
 		return 0
 	}
