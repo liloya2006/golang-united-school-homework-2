@@ -18,23 +18,9 @@ const SidesSquare myBeautifulType = 4
 
 func CalcSquare(sideLen float64, sidesNum myBeautifulType) float64 {
 
-	//if sidesNum == SidesCircle {
-	//	return 2 * math.Pi * sideLen
-	//} else {
-	//	if sidesNum == SidesTriangle {
-	//		return (math.Pow(sideLen, 2) * math.Sqrt(3)) / 4
-	//	} else {
-	//		if sidesNum == SidesSquare {
-	//			return math.Pow(sideLen, 2)
-	//		} else {
-	//			return 0
-	//		}
-	//	}
-	//}
-
 	switch sidesNum {
 	case SidesCircle:
-		return 2 * math.Pi * sideLen
+		return math.Pi * math.Pow(sideLen, 2)
 	case SidesTriangle:
 		return (math.Pow(sideLen, 2) * math.Sqrt(3)) / 4
 	case SidesSquare:
